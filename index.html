@@ -1,295 +1,538 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Star Catcher Ultimate Edition</title>
-   <link rel="icon" href="data:image/jpeg;base64,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"  type="image/png">
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: radial-gradient(circle at top, #070736, #000);
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    #hud {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    #gameOver {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      display: none;
-      opacity: 0;
-      transition: opacity 1s;
-    }
-    #gameOver h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-    #restartBtn {
-      background: #00ff88;
-      color: #000;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 10px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    #restartBtn:hover {
-      background: #00ffaa;
-      transform: scale(1.05);
-    }
-    canvas {
-      display: block;
-      margin: auto;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Star Catcher — Mobile Friendly (Joystick + Music + Sprites)</title>
+<style>
+  :root{ --bg:#071126; --panel:#0f1a2b; --accent:#ffd86b; --muted:rgba(255,255,255,0.65); }
+  html,body{ height:100%; margin:0; background: linear-gradient(180deg,#071126 0%, #081233 60%, #081833 100%); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:white; -webkit-user-select:none; user-select:none; overflow:hidden;}
+  #gameWrap{ position:relative; width:100%; height:100vh; display:flex; align-items:stretch; justify-content:center; }
+  canvas{ display:block; background:transparent; width:100%; height:100%; touch-action:none; }
+  #hud{ position:absolute; top:12px; left:12px; right:12px; display:flex; gap:8px; justify-content:space-between; pointer-events:none; z-index:30;}
+  .panel{ background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border-radius:12px; padding:8px 12px; font-weight:600; font-size:14px; display:inline-flex; gap:8px; align-items:center; pointer-events:auto;}
+  #controlsMobile{ position:absolute; bottom:18px; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:0 18px; z-index:40; pointer-events:none; }
+  .btn{ pointer-events:auto; -webkit-tap-highlight-color: rgba(0,0,0,0); background:rgba(255,255,255,0.03); border:none; color:var(--muted); width:64px; height:64px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; user-select:none; touch-action:none; transition:transform .06s ease; }
+  .btn:active{ transform: scale(.95); }
+  #leftGroup{ display:flex; gap:12px; align-items:center; }
+  #rightGroup{ display:flex; gap:12px; align-items:center; }
+  #modal{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(255,255,255,0.02)); border-radius:14px; padding:18px; text-align:center; z-index:50; display:none; min-width:220px;}
+  #modal h2{ margin:0 0 8px 0; font-size:22px; }
+  #modal button{ margin-top:12px; padding:8px 12px; border-radius:10px; border:none; background:var(--accent); color:#111; font-weight:700; }
+  #leader{ margin-top:10px; text-align:left; font-size:13px; color:var(--muted); }
+  /* joystick */
+  .joystick{
+    position:absolute;
+    bottom:18px;
+    left:18px;
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    z-index:41;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:auto;
+    touch-action:none;
+  }
+  .joy-base{
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.03);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .joy-knob{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:linear-gradient(180deg,#ffffff11,#00000011);
+    display:block;
+    transform:translate(0,0);
+    box-shadow:0 6px 18px rgba(0,0,0,0.35);
+  }
+  @media (min-width:900px){ .joystick{ display:none; } .hidden-desktop{ display:none; } }
+  @media (max-width:900px){ .hidden-mobile{ display:none; } }
+  /* small misc */
+  #musicToggle{ pointer-events:auto; }
+  .topRightControls{ display:flex; gap:8px; align-items:center; pointer-events:auto; }
+</style>
 </head>
 <body>
-  <div id="hud">Score: 0 | Lives: 3 | Level: 1</div>
-  <div id="gameOver">
-    <h1>Game Over</h1>
-    <p id="finalScore"></p>
-    <button id="restartBtn">Restart</button>
+<div id="gameWrap">
+  <canvas id="gameCanvas"></canvas>
+
+  <div id="hud">
+    <div class="panel small" id="infoLeft">Score: <span id="score">0</span> | Lives: <span id="lives">3</span></div>
+    <div style="display:flex;gap:8px;">
+      <div class="panel small" id="infoCenter">Level: <span id="level">1</span></div>
+      <div class="panel small" id="infoRight">High: <span id="high">0</span></div>
+      <div class="panel small topRightControls" style="align-items:center;gap:6px">
+        <label style="display:flex;align-items:center;gap:6px">SFX <input id="toggleSound" type="checkbox" checked></label>
+        <label style="display:flex;align-items:center;gap:6px">Music <input id="toggleMusic" type="checkbox" id="musicToggle" checked></label>
+      </div>
+    </div>
   </div>
-  <canvas id="gameCanvas" width="600" height="400"></canvas>
-  <script >
-const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
-const hud = document.getElementById("hud");
-const gameOverScreen = document.getElementById("gameOver");
-const finalScoreEl = document.getElementById("finalScore");
-const restartBtn = document.getElementById("restartBtn");
 
-// --- Game State ---
-let score, lives, level, stars, particles, gameSpeed, spawnRate, gameRunning;
+  <!-- Mobile Controls: buttons (right) -->
+  <div id="controlsMobile">
+    <div id="leftGroup">
+      <button id="btnLeft" class="btn">&#9664;</button>
+      <button id="btnRight" class="btn">&#9654;</button>
+    </div>
+    <div id="rightGroup">
+      <button id="btnAction" class="btn">&#9650;</button>
+    </div>
+  </div>
 
-// --- Basket ---
-const basket = {
-  x: canvas.width / 2 - 40,
-  y: canvas.height - 40,
-  width: 80,
-  height: 20,
-  speed: 6,
-  movingLeft: false,
-  movingRight: false,
+  <!-- Virtual joystick for mobile -->
+  <div class="joystick" id="joystick">
+    <div class="joy-base" id="joyBase">
+      <div class="joy-knob" id="joyKnob"></div>
+    </div>
+  </div>
+
+  <div id="modal">
+    <h2 id="modalTitle">Game Over</h2>
+    <div id="modalText">Score: <strong id="modalScore">0</strong></div>
+    <div id="leader"></div>
+    <button id="btnRestart">Restart</button>
+  </div>
+</div>
+
+<script>
+/* Star Catcher — Mobile edition with:
+   - virtual joystick
+   - background music + SFX toggles
+   - SVG sprites embedded as data-URI
+   - Optional Firebase leaderboard template (commented)
+*/
+
+const rand = (a,b) => a + Math.random()*(b-a);
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+const pick = arr => arr[Math.floor(Math.random()*arr.length)];
+
+// ---- sprite images as data URIs (SVG) ----
+// You can replace these with your own image URLs for higher-quality art.
+// Player sprite (simple ship)
+const SPRITE_PLAYER = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80" viewBox="0 0 120 80">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7ee7ff"/><stop offset="1" stop-color="#4fa8ff"/></linearGradient></defs>
+  <g>
+    <ellipse cx="60" cy="60" rx="44" ry="14" fill="#06354a" />
+    <path d="M12,60 C42,10 78,10 108,60" fill="url(#g)"/>
+    <circle cx="60" cy="48" r="6" fill="#fff" opacity="0.9"/>
+  </g>
+</svg>`);
+
+// Star sprite
+const SPRITE_STAR = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90">
+  <polygon points="45,6 55,36 88,36 60,54 70,84 45,66 20,84 30,54 2,36 35,36" fill="#ffd86b"/>
+  <filter id="g"><feGaussianBlur stdDeviation="0.7" /></filter>
+</svg>`);
+
+// Bomb sprite
+const SPRITE_BOMB = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <circle cx="36" cy="44" r="22" fill="#2b2b2b"/>
+  <rect x="50" y="16" width="8" height="16" rx="4" fill="#333"/>
+  <path d="M58 10 c6 -6 14 -6 20 0" stroke="#ffcf6b" stroke-width="3" fill="none"/>
+</svg>`);
+
+// Power sprite (generic)
+const SPRITE_POWER = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <rect x="6" y="6" width="58" height="58" rx="8" fill="#5b9cff"/>
+  <text x="35" y="43" font-size="30" font-family="Arial" text-anchor="middle" fill="#fff">P</text>
+</svg>`);
+
+// ---- canvas setup ----
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d', { alpha: true });
+let DPR = Math.max(1, window.devicePixelRatio || 1);
+function resize(){
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  canvas.width = Math.floor(w * DPR);
+  canvas.height = Math.floor(h * DPR);
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+}
+window.addEventListener('resize', resize);
+resize();
+
+// ---- state ----
+let state = {
+  score:0, lives:3, level:1, running:true, paused:false, high:0, sound:true, music:true
 };
+const HKEY = 'starcatcher_high_v2';
+function loadHigh(){ try{ const r = localStorage.getItem(HKEY); return r?JSON.parse(r):[] }catch(e){return[]} }
+function saveHigh(t){ localStorage.setItem(HKEY, JSON.stringify(t)); }
+let highTable = loadHigh();
+function updateHighDisplay(){ document.getElementById('high').textContent = highTable.length ? highTable[0].score : 0; }
+updateHighDisplay();
 
-// --- Star Types ---
-const starTypes = [
-  { color: "yellow", points: 1 },
-  { color: "cyan", points: 5 },
-  { color: "red", points: -3 },
-];
+// ---- player ----
+const player = { x: innerWidth/2, y: innerHeight - 90, w:72, h:32, speed:420, vx:0, magnet:false, magnetUntil:0 };
 
-// --- Sounds ---
-const catchSound = new Audio("https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg");
-const missSound = new Audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg");
-const bgMusic = new Audio("https://cdn.pixabay.com/audio/2022/03/15/audio_78b8217330.mp3");
-bgMusic.loop = true;
-bgMusic.volume = 0.4;
+// ---- items & particles ----
+const items = [];
+const particles = [];
+let lastSpawn = 0, spawnInterval = 900;
+let lastTime = performance.now();
 
-// --- Initialize Game ---
-function initGame() {
-  score = 0;
-  lives = 3;
-  level = 1;
-  stars = [];
-  particles = [];
-  gameSpeed = 2;
-  spawnRate = 0.02;
-  gameRunning = true;
-  gameOverScreen.style.display = "none";
-  gameOverScreen.style.opacity = 0;
-  hud.innerText = `Score: ${score} | Lives: ${lives} | Level: ${level}`;
-  bgMusic.currentTime = 0;
-  bgMusic.play();
-  gameLoop();
+// ---- audio: SFX + music ----
+let audioCtx = null;
+function ensureAudio(){ if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)(); }
+function playBeep(freq=440, dur=0.08, type='sine', vol=0.15){
+  if(!state.sound) return;
+  ensureAudio();
+  const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+  o.type = type; o.frequency.value = freq; g.gain.value = vol;
+  o.connect(g); g.connect(audioCtx.destination);
+  o.start(); o.stop(audioCtx.currentTime + dur);
+}
+// background music: simple looped oscillator-based pad
+let musicNode = null;
+function startMusic(){
+  if(!state.music) return;
+  ensureAudio();
+  if(musicNode) return;
+  const o = audioCtx.createOscillator();
+  const g = audioCtx.createGain();
+  o.type = 'sine';
+  o.frequency.value = 110;
+  g.gain.value = 0.02;
+  o.connect(g); g.connect(audioCtx.destination);
+  o.start();
+  musicNode = {osc:o,gain:g};
+}
+function stopMusic(){
+  if(!musicNode) return;
+  musicNode.osc.stop();
+  musicNode = null;
 }
 
-// --- Create Star ---
-function createStar() {
-  const type = starTypes[Math.floor(Math.random() * starTypes.length)];
-  const x = Math.random() * (canvas.width - 20);
-  stars.push({ x, y: 0, color: type.color, points: type.points });
-}
+// music toggle input
+const soundToggle = document.getElementById('toggleSound');
+soundToggle.addEventListener('change', ()=>{ state.sound = soundToggle.checked; });
+const musicToggle = document.getElementById('toggleMusic');
+musicToggle.addEventListener('change', ()=>{
+  state.music = musicToggle.checked;
+  // must resume audio context in response to user gesture on mobile
+  if(state.music){
+    ensureAudio();
+    try{ audioCtx.resume(); }catch(e){}
+    startMusic();
+  } else stopMusic();
+});
 
-// --- Create Particle Explosion ---
-function createParticles(x, y, color) {
-  for (let i = 0; i < 10; i++) {
-    particles.push({
-      x,
-      y,
-      radius: Math.random() * 3 + 1,
-      color,
-      speedX: (Math.random() - 0.5) * 3,
-      speedY: (Math.random() - 0.5) * 3,
-      life: 30,
-    });
-  }
+// resume audio on first touch/click so Chrome/Safari allow autoplay
+function tryResumeAudio(){
+  try{
+    if(audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    if(state.music) startMusic();
+  }catch(e){}
 }
+window.addEventListener('touchstart', tryResumeAudio, {once:true});
+window.addEventListener('mousedown', tryResumeAudio, {once:true});
 
-// --- Update Particles ---
-function updateParticles() {
-  for (let i = particles.length - 1; i >= 0; i--) {
-    const p = particles[i];
-    p.x += p.speedX;
-    p.y += p.speedY;
-    p.life--;
-    if (p.life <= 0) particles.splice(i, 1);
-  }
-}
-
-// --- Draw Particles ---
-function drawParticles() {
-  particles.forEach((p) => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = p.color;
-    ctx.fill();
+// ---- spawn logic ----
+function spawnItem(){
+  const w = innerWidth;
+  const x = rand(24, w-24);
+  const level = state.level;
+  const t = Math.random();
+  let type = 'star';
+  if(t < 0.08 + (level*0.01)) type = 'bomb';
+  else if(t < 0.14 + (level*0.01)) type = 'power';
+  let subtype = null;
+  if(type === 'power') subtype = pick(['life','slow','magnet']);
+  items.push({
+    id: Math.random().toString(36).slice(2,9),
+    x, y:-30,
+    vy: rand(80 + level*10, 160 + level*20),
+    size: type === 'star'? rand(18,28) : type === 'bomb'? rand(22,30) : rand(20,26),
+    type, subtype, angle: Math.random()*Math.PI*2, rotSpeed: rand(-0.03,0.03)
   });
 }
 
-// --- Draw Stars ---
-function drawStars() {
-  stars.forEach((star) => {
-    ctx.beginPath();
-    ctx.arc(star.x + 10, star.y + 10, 10, 0, Math.PI * 2);
-    ctx.fillStyle = star.color;
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = star.color;
-    ctx.fill();
-    ctx.shadowBlur = 0;
-  });
+// ---- particles ----
+function spawnParticles(x,y,color,count=10){
+  for(let i=0;i<count;i++){
+    particles.push({ x,y, vx:rand(-220,220), vy:rand(-360,-80), life:rand(400,900), born:performance.now(), size:rand(2,6), color, alpha:1 });
+  }
 }
 
-// --- Draw Basket ---
-function drawBasket() {
-  ctx.fillStyle = "#00ff88";
-  ctx.fillRect(basket.x, basket.y, basket.width, basket.height);
+// ---- collisions ----
+function rectIntersects(px,py,pw,ph,x,y,s){ return px < x+s && px+pw > x && py < y+s && py+ph > y; }
+
+// ---- input: keyboard + on-screen buttons + swipe + joystick ----
+const keys = {};
+window.addEventListener('keydown', e=>{
+  if(e.key==='ArrowLeft'||e.key==='a') keys.left=true;
+  if(e.key==='ArrowRight'||e.key==='d') keys.right=true;
+  if(e.key===' '||e.key==='ArrowUp') keys.action=true;
+  if(e.key==='p') togglePause();
+});
+window.addEventListener('keyup', e=>{
+  if(e.key==='ArrowLeft'||e.key==='a') keys.left=false;
+  if(e.key==='ArrowRight'||e.key==='d') keys.right=false;
+  if(e.key===' '||e.key==='ArrowUp') keys.action=false;
+});
+
+// on-screen buttons
+const btnLeft = document.getElementById('btnLeft');
+const btnRight = document.getElementById('btnRight');
+const btnAction = document.getElementById('btnAction');
+let leftHeld=false,rightHeld=false,actionHeld=false;
+['touchstart','mousedown'].forEach(ev=>{
+  btnLeft.addEventListener(ev,(e)=>{ e.preventDefault(); leftHeld=true; tryResumeAudio(); }, {passive:false});
+  btnRight.addEventListener(ev,(e)=>{ e.preventDefault(); rightHeld=true; tryResumeAudio(); }, {passive:false});
+  btnAction.addEventListener(ev,(e)=>{ e.preventDefault(); actionHeld=true; tryResumeAudio(); }, {passive:false});
+});
+['touchend','mouseup','touchcancel','mouseleave'].forEach(ev=>{
+  btnLeft.addEventListener(ev, ()=>{ leftHeld=false; }, {passive:true});
+  btnRight.addEventListener(ev, ()=>{ rightHeld=false; }, {passive:true});
+  btnAction.addEventListener(ev, ()=>{ actionHeld=false; }, {passive:true});
+});
+
+// swipe/tap on canvas
+let touchStartX=null, touchStartY=null;
+canvas.addEventListener('touchstart', (e)=>{ if(e.touches.length===0) return; touchStartX = e.touches[0].pageX; touchStartY = e.touches[0].pageY; }, {passive:true});
+canvas.addEventListener('touchend', (e)=>{ if(touchStartX===null) return; const touch = e.changedTouches[0]; const dx = touch.pageX - touchStartX; const dy = touch.pageY - touchStartY; const dist = Math.sqrt(dx*dx + dy*dy); if(dist < 12){ triggerTapAction(touch.pageX, touch.pageY); } else { if(Math.abs(dx) > Math.abs(dy)){ if(dx>0) applySwipe('right'); else applySwipe('left'); } else { if(dy<0) applySwipe('up'); else applySwipe('down'); } } touchStartX=null; touchStartY=null; }, {passive:true});
+canvas.addEventListener('mousedown', (e)=>{ triggerTapAction(e.pageX, e.pageY); });
+
+// tap action
+function triggerTapAction(x,y){ spawnParticles(x,y,'#ffd86b',6); playBeep(800,0.06,'sine',0.08); tryResumeAudio(); }
+
+// swipe behavior
+function applySwipe(dir){
+  if(dir==='left'){ keys.left=true; setTimeout(()=>keys.left=false, 160); }
+  if(dir==='right'){ keys.right=true; setTimeout(()=>keys.right=false,160); }
+  if(dir==='up'){ keys.action=true; setTimeout(()=>keys.action=false,160); }
 }
 
-// --- Move Basket ---
-function moveBasket() {
-  if (basket.movingLeft && basket.x > 0) basket.x -= basket.speed;
-  if (basket.movingRight && basket.x + basket.width < canvas.width)
-    basket.x += basket.speed;
+// joystick implementation
+const joyBase = document.getElementById('joyBase');
+const joyKnob = document.getElementById('joyKnob');
+let joyActive=false, joyCenter={x:0,y:0}, joyId=null;
+function initJoystick(){
+  const rect = joyBase.getBoundingClientRect();
+  joyCenter = { x: rect.left + rect.width/2, y: rect.top + rect.height/2 };
+}
+initJoystick();
+window.addEventListener('resize', initJoystick);
+
+function setKnobPos(x,y){
+  const rect = joyBase.getBoundingClientRect();
+  const cx = rect.left + rect.width/2;
+  const cy = rect.top + rect.height/2;
+  const max = rect.width/2 - 18;
+  let dx = x - cx; let dy = y - cy;
+  const d = Math.sqrt(dx*dx + dy*dy);
+  if(d > max){ dx = dx * (max/d); dy = dy * (max/d); }
+  joyKnob.style.transform = `translate(${dx}px, ${dy}px)`;
+  // compute normalized direction
+  const nx = dx / max;
+  const ny = dy / max;
+  // apply to keys (simple threshold)
+  if(nx < -0.25) { keys.left = true; keys.right = false; } else if(nx > 0.25) { keys.right = true; keys.left = false; } else { keys.left = keys.right = false; }
 }
 
-// --- Update Stars ---
-function updateStars() {
-  for (let i = stars.length - 1; i >= 0; i--) {
-    stars[i].y += gameSpeed;
+function resetKnob(){ joyKnob.style.transform = 'translate(0,0)'; keys.left = false; keys.right = false; }
 
-    // Catch star
-    if (
-      stars[i].y + 20 >= basket.y &&
-      stars[i].x + 20 > basket.x &&
-      stars[i].x < basket.x + basket.width
-    ) {
-      if (stars[i].points > 0) catchSound.play();
-      else missSound.play();
+joyBase.addEventListener('pointerdown', (e)=>{
+  joyActive=true; joyId=e.pointerId; joyBase.setPointerCapture(joyId);
+  setKnobPos(e.clientX, e.clientY);
+  tryResumeAudio();
+});
+joyBase.addEventListener('pointermove', (e)=>{
+  if(!joyActive || e.pointerId !== joyId) return;
+  setKnobPos(e.clientX, e.clientY);
+});
+joyBase.addEventListener('pointerup', (e)=>{
+  if(e.pointerId !== joyId) return;
+  joyActive=false; joyBase.releasePointerCapture(joyId); resetKnob();
+});
+joyBase.addEventListener('pointercancel', (e) => { if(e.pointerId === joyId) { joyActive=false; resetKnob(); } });
 
-      score += stars[i].points;
-      if (score < 0) score = 0;
-      createParticles(stars[i].x, stars[i].y, stars[i].color);
-      if (stars[i].points < 0) lives--;
+// map held buttons to keys periodically
+setInterval(()=>{ keys.left = leftHeld || keys.left; keys.right = rightHeld || keys.right; keys.action = actionHeld || keys.action; }, 30);
 
-      stars.splice(i, 1);
-      updateHUD();
-      checkGameStatus();
+// ---- gameplay functions ----
+function nextLevel(){ state.level++; spawnInterval = Math.max(350, 900 - (state.level-1)*70); playBeep(1200,0.12,'sawtooth',0.18); spawnParticles(player.x, player.y-20, '#74ffb9', 30); updateUI(); }
+function loseLife(){ state.lives--; playBeep(160,0.2,'sine',0.25); spawnParticles(player.x, player.y-10, '#ff6b6b', 18); if(state.lives <= 0) gameOver(); updateUI(); }
+function applyPower(name){
+  if(name==='life'){ state.lives++; playBeep(900,0.14,'triangle',0.18); spawnParticles(player.x, player.y-10, '#74ffb9',18); }
+  else if(name==='slow'){ const old = spawnInterval; spawnInterval = spawnInterval * 1.7; playBeep(650,0.14,'sine',0.12); setTimeout(()=>{ spawnInterval = Math.max(350, old); }, 6000); }
+  else if(name==='magnet'){ player.magnet=true; player.magnetUntil = performance.now() + 9000; playBeep(1400,0.12,'sine',0.12); }
+  updateUI();
+}
+
+// ---- UI & leaderboard (local) ----
+function updateUI(){ document.getElementById('score').textContent = state.score; document.getElementById('lives').textContent = state.lives; document.getElementById('level').textContent = state.level; }
+const modal = document.getElementById('modal');
+function gameOver(){
+  state.running = false;
+  document.getElementById('modalScore').textContent = state.score;
+  modal.style.display = 'block';
+  highTable.push({name:'You',score:state.score,date:(new Date()).toISOString()});
+  highTable.sort((a,b)=>b.score-a.score);
+  highTable = highTable.slice(0,10);
+  saveHigh(highTable);
+  renderLeader();
+  updateHighDisplay();
+}
+document.getElementById('btnRestart').addEventListener('click', ()=>{ modal.style.display='none'; resetGame(); });
+
+// render leaderboard inside modal
+function renderLeader(){
+  const el = document.getElementById('leader');
+  el.innerHTML = '<strong>Top Scores</strong><br>';
+  highTable.slice(0,5).forEach((it,i)=>{ el.innerHTML += `${i+1}. ${it.name} — ${it.score}<br>`; });
+}
+
+// reset game
+function resetGame(){
+  items.length = 0; particles.length = 0;
+  state.score = 0; state.lives = 3; state.level = 1; state.running = true; state.paused=false;
+  spawnInterval = 900; lastSpawn = 0;
+  player.x = innerWidth/2; player.magnet=false;
+  updateUI(); loop(performance.now());
+}
+
+// ---- main loop ----
+function loop(ts){
+  if(!lastTime) lastTime = ts;
+  const dt = Math.min(60, ts - lastTime)/1000;
+  lastTime = ts;
+  if(!state.running) return;
+  if(!state.paused){ update(dt); render(); } else { render(); ctx.fillStyle='rgba(2,6,12,0.45)'; ctx.fillRect(0,0,innerWidth,innerHeight); ctx.fillStyle='white'; ctx.font='22px Inter,system-ui'; ctx.textAlign='center'; ctx.fillText('Paused', innerWidth/2, innerHeight/2); }
+  requestAnimationFrame(loop);
+}
+
+// ---- update ----
+function update(dt){
+  const now = performance.now();
+  // movement
+  let moveDir = 0;
+  if(keys.left) moveDir -= 1;
+  if(keys.right) moveDir += 1;
+  if(moveDir !== 0) player.vx = player.speed * moveDir;
+  else { player.vx *= 0.88; if(Math.abs(player.vx) < 2) player.vx = 0; }
+  if(keys.action) spawnParticles(player.x, player.y-10, '#ffd86b', 2);
+  player.x += player.vx * dt;
+  player.x = clamp(player.x, player.w/2, innerWidth - player.w/2);
+  player.y = innerHeight - 80;
+  if(player.magnet && now > player.magnetUntil) player.magnet = false;
+  if(now - lastSpawn > spawnInterval){ spawnItem(); lastSpawn = now; }
+  for(let i=items.length-1;i>=0;i--){
+    const it = items[i];
+    it.y += it.vy * dt;
+    it.angle += it.rotSpeed;
+    if(player.magnet){
+      const dx = player.x - it.x, dy = player.y - it.y, d = Math.sqrt(dx*dx + dy*dy);
+      if(d < 180){ const s = 180 - d; it.x += (dx/(d||1))*(s*0.02); it.y += (dy/(d||1))*(s*0.02); }
+    }
+    if(rectIntersects(player.x - player.w/2, player.y - player.h/2 - 10, player.w, player.h, it.x - it.size/2, it.y - it.size/2, it.size)){
+      if(it.type==='star'){ state.score += 10; spawnParticles(it.x,it.y,'#ffd86b',12); playBeep(1000+Math.random()*300,0.06,'square',0.08); }
+      else if(it.type==='bomb'){ loseLife(); }
+      else if(it.type==='power'){ applyPower(it.subtype); }
+      items.splice(i,1);
+      const lvlThreshold = 200 + state.level*200;
+      if(state.score >= lvlThreshold) nextLevel();
+      updateUI();
       continue;
     }
-
-    // Missed good star
-    if (stars[i].y > canvas.height) {
-      if (stars[i].points > 0) {
-        lives--;
-        missSound.play();
-        createParticles(stars[i].x, stars[i].y, "white");
-        updateHUD();
-        checkGameStatus();
-      }
-      stars.splice(i, 1);
-    }
+    if(it.y - it.size > innerHeight + 40){ if(it.type === 'star') state.score = Math.max(0, state.score - 5); items.splice(i,1); updateUI(); }
+  }
+  for(let i=particles.length-1;i>=0;i--){
+    const p = particles[i]; const age = performance.now() - p.born;
+    if(age > p.life){ particles.splice(i,1); continue; }
+    const t = age / p.life;
+    p.vy += 800 * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.alpha = 1 - t;
   }
 }
 
-// --- Draw Background Stars ---
-function drawBackgroundStars() {
-  for (let i = 0; i < 40; i++) {
-    ctx.fillStyle = `rgba(255,255,255,${Math.random()})`;
-    ctx.fillRect(Math.random() * canvas.width, Math.random() * canvas.height, 2, 2);
+// ---- rendering ----
+function clear(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  const grd = ctx.createLinearGradient(0,0,0,innerHeight);
+  grd.addColorStop(0,'rgba(7,17,38,0.95)'); grd.addColorStop(1,'rgba(6,10,26,0.88)');
+  ctx.fillStyle = grd; ctx.fillRect(0,0,innerWidth,innerHeight);
+  // subtle starfield
+  for(let i=0;i<35;i++){ ctx.globalAlpha = 0.05 + (i%7)*0.01; const sx = (i*97 + (performance.now()/40 % innerWidth)) % innerWidth; const sy = (i*53 + (performance.now()/80 % innerHeight)) % innerHeight; ctx.fillStyle='rgba(255,255,255,0.7)'; ctx.fillRect(sx, sy, 1.2, 1.2); }
+  ctx.globalAlpha = 1;
+}
+function drawPlayer(){
+  const img = new Image(); img.src = SPRITE_PLAYER;
+  const w = player.w, h = player.h*1.6;
+  ctx.save(); ctx.translate(player.x, player.y); ctx.drawImage(img, -w/2, -h, w, h); ctx.restore();
+  if(player.magnet){ ctx.beginPath(); ctx.strokeStyle='#74ffb9'; ctx.lineWidth=2; ctx.arc(player.x, player.y - player.h - 10, 18, 0, Math.PI*2); ctx.stroke(); }
+}
+function drawItems(){
+  for(const it of items){
+    ctx.save(); ctx.translate(it.x, it.y); ctx.rotate(it.angle);
+    if(it.type === 'star'){ const img = new Image(); img.src = SPRITE_STAR; const s = it.size; ctx.drawImage(img, -s/2, -s/2, s, s); }
+    else if(it.type === 'bomb'){ const img = new Image(); img.src = SPRITE_BOMB; const s = it.size; ctx.drawImage(img, -s/2, -s/2, s, s); }
+    else if(it.type === 'power'){ const img = new Image(); img.src = SPRITE_POWER; const s = it.size; ctx.drawImage(img, -s/2, -s/2, s, s); ctx.fillStyle='white'; ctx.font = `${Math.floor(s*0.4)}px Inter`; ctx.textAlign='center'; ctx.textBaseline='middle'; }
+    ctx.restore();
   }
 }
+function drawParticles(){ for(const p of particles){ ctx.globalAlpha = p.alpha || 1; ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill(); } ctx.globalAlpha = 1; }
+function drawHUD(){ if(window.innerWidth < 900){ ctx.font = '12px Inter, system-ui'; ctx.fillStyle = 'rgba(255,255,255,0.06)'; ctx.textAlign = 'left'; ctx.fillText('Use joystick, arrows or swipe', 14, innerHeight - 12); } }
+function render(){ clear(); drawItems(); drawPlayer(); drawParticles(); drawHUD(); }
 
-// --- Update HUD ---
-function updateHUD() {
-  hud.innerText = `Score: ${score} | Lives: ${lives} | Level: ${level}`;
-}
+// ---- start ----
+resetGame();
 
-// --- Check Level / Game Over ---
-function checkGameStatus() {
-  if (lives <= 0) endGame();
-  if (score >= level * 20) {
-    level++;
-    gameSpeed += 0.5;
-    spawnRate += 0.005;
-    updateHUD();
-  }
-}
+// pause on visibility change
+document.addEventListener('visibilitychange', ()=>{ if(document.hidden && state.running) state.paused = true; });
 
-// --- End Game ---
-function endGame() {
-  gameRunning = false;
-  bgMusic.pause();
-  gameOverScreen.style.display = "block";
-  setTimeout(() => (gameOverScreen.style.opacity = 1), 50);
-  finalScoreEl.innerText = `Your final score: ${score}`;
-}
+// UI tick
+function uiTick(){ document.getElementById('score').textContent = state.score; document.getElementById('lives').textContent = state.lives; document.getElementById('level').textContent = state.level; requestAnimationFrame(uiTick); }
+uiTick();
 
-// --- Controls ---
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowLeft") basket.movingLeft = true;
-  if (e.key === "ArrowRight") basket.movingRight = true;
-});
-document.addEventListener("keyup", (e) => {
-  if (e.key === "ArrowLeft") basket.movingLeft = false;
-  if (e.key === "ArrowRight") basket.movingRight = false;
-});
+// ensure joystick hidden on desktop
+function adaptUI(){ const mobileControls = document.getElementById('controlsMobile'); const joystick = document.getElementById('joystick'); if(window.innerWidth > 900){ mobileControls.style.display='none'; joystick.style.display='none'; } else { mobileControls.style.display='flex'; joystick.style.display='block'; } }
+window.addEventListener('resize', adaptUI); adaptUI();
 
-// --- Restart Button ---
-restartBtn.addEventListener("click", initGame);
+/* -------------------------
+   OPTIONAL: Firebase leaderboard template
+   -------------------------
+   To enable an online leaderboard using Firebase Realtime Database or Firestore:
+   1) Create a Firebase project at https://console.firebase.google.com/
+   2) Add a Web App and copy the config.
+   3) Uncomment and paste your config below, then implement simple writes/reads.
 
-// --- Game Loop ---
-function gameLoop() {
-  if (!gameRunning) return;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBackgroundStars();
+   Example (Firestore):
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+   import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs } from
+   "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
-  if (Math.random() < spawnRate) createStar();
-  moveBasket();
-  updateStars();
-  updateParticles();
-  drawParticles();
-  drawStars();
-  drawBasket();
+   const firebaseConfig = { apiKey: "...", authDomain: "...", projectId: "...", storageBucket:"...", messagingSenderId:"...", appId:"..." };
+   const app = initializeApp(firebaseConfig);
+   const db = getFirestore(app);
+   // to save:
+   await addDoc(collection(db, "scores"), { name: "You", score: state.score, ts: new Date() });
+   // to read top 10:
+   const q = query(collection(db,"scores"), orderBy("score","desc"), limit(10));
+   const snap = await getDocs(q);
+   // then render list
 
-  requestAnimationFrame(gameLoop);
-}
+   I left this as a template because it requires your project keys. If you'd like, paste your config and I can finish integrating it.
+*/
 
-// Start game
-initGame();
+// ---- helpful: small debug toggle ----
+window.togglePause = ()=>{ state.paused = !state.paused; };
 
+// ---- done ----
 </script>
 </body>
 </html>
+
